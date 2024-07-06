@@ -1,6 +1,6 @@
 package Arrays;
 
-public class BinarySearch {
+public class ReverseAnArray {
     public static int BinarySearching(int arr[], int key) {
         int start = 0;
         int end = arr.length - 1;
@@ -32,5 +32,5 @@ public class BinarySearch {
         System.out.println(BinarySearching(arr, key));
 
     }
-
+    
 }
