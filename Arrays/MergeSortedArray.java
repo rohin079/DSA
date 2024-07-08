@@ -21,7 +21,7 @@ class MergeSortedArray {
         int arr2[] = { 2, 5, 6 };
 
         int finalarr[] = merge(arr, 3, arr2, 3);
-
+        
         for (int i = 0; i < finalarr.length; i++) {
             System.out.print(finalarr[i]);
         }
