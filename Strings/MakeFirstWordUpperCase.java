@@ -1,33 +1,30 @@
 package Strings;
 
 public class MakeFirstWordUpperCase {
-    public static float shortestPath(String str) {
+    public static String toUpperCase(String str) {
 
-        for (int i = 0; i < str.length(); i++) {
+        char ch = Character.toUpperCase(str.charAt(0));
+        StringBuilder sb = new StringBuilder();
+        sb.append(ch);
 
-            char dir = str.charAt(i);
-
-            if (dir == 'S') {
-                y--;
-            } else if (dir == 'N') {
-                y++;
-            } else if (dir == 'E') {
-                x++;
-            } else if (dir == 'W') {
-                x--;
+        for (int i = 1; i < str.length(); i++) {
+            if (str.charAt(i) == ' ' && i < str.length() - 1) {
+                sb.append(str.charAt(i));
+                i++;
+                sb.append(Character.toUpperCase(str.charAt(i)));
+            } else {
+                sb.append(str.charAt(i));
             }
+
         }
 
-        int x2 = x * x;
-        int y2 = y * y;
-
-        return (float) (Math.sqrt(x2 + y2));
+        return sb.toString();
     }
 
     public static void main(String[] args) {
-        String str = "WWNSEWNNEWS";
+        String str = "hi, my name is rohin";
 
-        System.out.println(shortestPath(str));
+        System.out.println(toUpperCase(str));
 
     }
 
