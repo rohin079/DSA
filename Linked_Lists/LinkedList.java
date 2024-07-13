@@ -55,6 +55,25 @@ public class LinkedList {
 
     }
 
+    public void addMiddle(int index, int data){
+
+        Node newNode =  new Node(data);
+
+        Node temp = Head;
+
+        int i =0;
+
+        while(i != index-1){
+            temp = temp.next;
+            i++;
+        }
+
+        newNode.next = temp.next;
+        temp.next = newNode;
+
+
+    }
+
     public static void main(String[] args) {
 
         LinkedList ll = new LinkedList();
