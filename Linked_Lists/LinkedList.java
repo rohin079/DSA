@@ -28,9 +28,9 @@ public class LinkedList {
         Head = newNode;
     }
 
-    public void addLast(int data){
+    public void addLast(int data) {
         Node newNode = new Node(data);
-        
+
         if (Head == null) {
             Head = Tail = newNode;
             return;
@@ -41,36 +41,39 @@ public class LinkedList {
         newNode.next = null;
     }
 
-    public void PrintLinkedList(){
+    public void PrintLinkedList() {
         Node temp = Head;
 
-        if(Head == null){
+        if (Head == null) {
             System.out.println("Linked list is empty");
         }
 
-       while(temp != null){
-        System.out.println(temp.data);
-        temp = temp.next;
-       }
+        while (temp != null) {
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
 
     }
 
-    public void addMiddle(int index, int data){
+    public void addMiddle(int index, int data) {
 
-        Node newNode =  new Node(data);
+        if (index == 0) {
+            addFirst(data);
+        }
+
+        Node newNode = new Node(data);
 
         Node temp = Head;
 
-        int i =0;
+        int i = 0;
 
-        while(i != index-1){
+        while (i != index - 1) {
             temp = temp.next;
             i++;
         }
 
         newNode.next = temp.next;
         temp.next = newNode;
-
 
     }
 
@@ -80,7 +83,8 @@ public class LinkedList {
 
         ll.addFirst(1);
         ll.addFirst(4);
-        ll.addLast(5);;
+        ll.addLast(5);
+        ;
 
         ll.PrintLinkedList();
 
