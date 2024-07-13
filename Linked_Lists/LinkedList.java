@@ -49,9 +49,11 @@ public class LinkedList {
         }
 
         while (temp != null) {
-            System.out.println(temp.data);
+            System.out.print(temp.data + "->");
             temp = temp.next;
         }
+        System.out.print("null");
+        System.out.println();
 
     }
 
@@ -77,6 +79,36 @@ public class LinkedList {
 
     }
 
+    public void reverse() {
+        Node prev = null;
+        Node current = Tail = Head;
+        Node next;
+
+        while (current != null) {
+
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+
+        Head = prev;
+    }
+    
+    public Node findMiddle(){
+
+        Node slow = Head;
+        Node fast = Head;
+
+        while(fast != null || fast.next != null ){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+
+    }
+
     public static void main(String[] args) {
 
         LinkedList ll = new LinkedList();
@@ -86,6 +118,8 @@ public class LinkedList {
         ll.addLast(5);
         ;
 
+        ll.PrintLinkedList();
+        ll.reverse();
         ll.PrintLinkedList();
 
     }
