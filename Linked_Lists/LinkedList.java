@@ -94,19 +94,37 @@ public class LinkedList {
 
         Head = prev;
     }
-    
-    public Node findMiddle(){
+
+    public Node findMiddle() {
 
         Node slow = Head;
         Node fast = Head;
 
-        while(fast != null || fast.next != null ){
+        while (fast != null || fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
 
         return slow;
 
+    }
+
+    public boolean findLoop() {
+
+        Node slow = Head;
+        Node fast = Head;
+
+        while (fast != null || fast.next != null) {
+
+            slow = slow.next;
+            fast = fast.next;
+
+            if (slow == fast) {
+                return true;
+            }
+
+        }
+        return false;
     }
 
     public static void main(String[] args) {
