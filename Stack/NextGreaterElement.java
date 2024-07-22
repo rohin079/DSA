@@ -21,13 +21,15 @@ public class NextGreaterElement {
             }
 
             else{
-                nextGreaterElement[i] = s.peek();
+                nextGreaterElement[i] = arr[s.peek()];
         }
 
             s.push(i);
 
     }
 
-    for(int i=0; )
+    for(int i=0; i<nextGreaterElement.length; i++){
+        System.out.print(nextGreaterElement[i] + " ");
+    }
 }
 }
