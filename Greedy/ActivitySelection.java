@@ -19,7 +19,7 @@ public class ActivitySelection {
         int lastEnd = end[0];
 
         for(int i =1; i<start.length; i++){
-            if(start[i] <= lastEnd ){
+            if(start[i] >= lastEnd ){
                 count++;
                 ans.add(i);
                 lastEnd = end[i];
