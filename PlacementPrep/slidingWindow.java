@@ -1,4 +1,3 @@
-package PlacementPrep;
 
 public class slidingWindow {
 

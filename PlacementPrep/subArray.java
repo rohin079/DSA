@@ -1,4 +1,3 @@
-package PlacementPrep;
 
 public class subArray {
     public static void SubArray(int arr[]) {

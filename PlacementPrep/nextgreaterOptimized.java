@@ -1,23 +1,22 @@
-import java.util.Arrays;
+import java.util.*;
 
-public class nextGreaterElement {
-
+public class nextgreaterOptimized {
     public static void main(String[] args) {
 
         int arr[] = { 1, 5, -3, 7, 1 };
+
+        Stack<Integer> st = new Stack<>();
 
         int newarr[] = new int[arr.length];
 
         Arrays.fill(newarr, -1);
 
         for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[j] > arr[i]) {
-                    newarr[i] = arr[j];
-                    break;
-                }
-
+            while (!st.isEmpty() && arr[i] > arr[st.peek()]) {
+                newarr[st.pop()] = arr[i];
             }
+
+            st.push(i);
 
         }
 
